@@ -21,9 +21,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, AboutActivity.class));
             }
         });
-    }
 
-    public void openAbout(View v){
-        startActivity(new Intent(MainActivity.this, AboutActivity.class));
+        final Button button2 = (Button) findViewById(R.id.challengeButton);
+        button2.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                startActivity(new Intent(MainActivity.this, PickChallenge.class));
+            }
+        });
     }
 }

@@ -20,6 +20,18 @@
             android:name=".AboutActivity"
             android:label="About">
         </activity>
+        <activity
+            android:name=".PickChallenge"
+            android:label="Challenges">
+        </activity>
+        <activity
+            android:name=".challenge"
+            android:label="Easy Challenge">
+        </activity>
+        <activity
+            android:name=".ResultsActivity"
+            android:label="Results">
+        </activity>
     </application>
 
 </manifest>
