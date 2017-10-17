@@ -18,7 +18,7 @@ public class challenge extends AppCompatActivity {
     public static String[] answers = {"tar", "rat", "tab", "charm", "alter", "later"};
     public static String[] submitted = new String[answers.length];
     public int puzzle = 0;
-    public int score = 0;
+    public static int score = 0;
     public boolean used = false;
     public int submitTrack = 0;
 
@@ -50,6 +50,36 @@ public class challenge extends AppCompatActivity {
                 {
                     startActivity(new Intent(challenge.this, ResultsActivity.class));
                 }
+
+            }
+        });
+
+        final Button button3 = (Button)findViewById(R.id.Back);
+        button3.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                if(puzzle != 0)
+                {
+                    puzzle--;
+                    button2.setText("Next");
+                    anagram.setText(anagrams[puzzle]);
+                }
+
+            }
+        });
+
+        final Button button4 = (Button)findViewById(R.id.quitButton);
+        button4.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                score = 0;
+                for(int i=0; i<submitted.length; i++)
+                {
+                    submitted[i] = null;
+                }
+                startActivity(new Intent(challenge.this, MainActivity.class));
 
             }
         });
